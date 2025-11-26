@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- 🧩 GTM dataLayer 宣告（一定要最先） -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+</script>
+
+<!-- 🧩 GTM 主代碼（把 GTM-XXXXXXX 換成你的代碼） -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-XXXXXXX"); 
+  /* ← 這裡換成你的 GTM ID */
+</script>
+
+<!-- 🧩 GTM noscript（CodePen會在 <body> 裡自動加入，但放這裡也可） -->
+<noscript>
+  <iframe
+    src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0"
+    width="0"
+    style="display:none;visibility:hidden"
+  ></iframe>
+</noscript>
+
+<div class="page-wrapper">
+  <div class="container">
+    <h1>線上服飾商店 Demo</h1>
+    <p class="subtitle">
+      按按鈕 → <code>dataLayer.push()</code> → GTM / GA4 收事件
+    </p>
+
+    <div class="product-box">
+      <div class="product-title">示範商品：Oversize 帽T</div>
+      <div class="product-price">NT$ 980</div>
+      <div class="product-meta">顏色：黑｜尺寸：Free</div>
+      <div class="product-meta">商品編號：DEMO-001</div>
+
+      <div class="btn-group">
+        <button class="action-btn" id="btn-add-to-cart">① 加入購物車</button>
+        <button class="action-btn" id="btn-begin-checkout">② 前往結帳</button>
+        <button class="action-btn" id="btn-purchase">③ 完成購買</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stats-row">
+        <span>加入購物車次數：</span>
+        <span id="count-add-to-cart">0</span>
+      </div>
+      <div class="stats-row">
+        <span>前往結帳次數：</span>
+        <span id="count-begin-checkout">0</span>
+      </div>
+      <div class="stats-row">
+        <span>完成購買次數：</span>
+        <span id="count-purchase">0</span>
+      </div>
+
+      <div class="hint">
+        GTM 自訂事件名稱：<br />
+        <code>add_to_cart</code>、<code>begin_checkout</code>、<code>purchase</code>
+      </div>
+    </div>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
